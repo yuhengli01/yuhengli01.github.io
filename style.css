@@ -324,12 +324,15 @@ nav {
   font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
   color: var(--purple);
 }
+img.exp-logo { background: #fff; padding: 3px; }
 
 .exp-main { min-width: 0; }
 .exp-org-name {
   font-family: var(--font-serif); font-size: 1.08rem; font-weight: 700; color: var(--ink);
   line-height: 1.25;
 }
+.exp-org-name a { color: inherit; text-decoration: none; }
+.exp-org-name a:hover { color: var(--purple); text-decoration: underline; text-underline-offset: 2px; }
 .exp-role {
   font-size: 0.85rem; font-style: italic; font-weight: 600;
   color: var(--teal); margin-top: 1px;
@@ -387,6 +390,19 @@ footer {
   font-size: 0.92rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 1.4rem;
 }
 .research-text strong { color: var(--ink); font-weight: 700; }
+.research-interests {
+  font-size: 0.9rem; color: var(--ink-2); line-height: 1.7;
+  margin-bottom: 1.4rem; padding: 0.7rem 0.9rem;
+  background: var(--teal-light); border-radius: 8px;
+  border-left: 3px solid var(--teal);
+}
+.research-interests strong { color: var(--purple); font-weight: 700; }
+.research-interests em { color: var(--ink); font-style: italic; }
+.ri-title { font-weight: 700; color: var(--purple); margin-bottom: 0.5rem; font-size: 0.92rem; }
+.ri-list { margin: 0; padding-left: 1.2rem; }
+.ri-list li { font-size: 0.88rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 0.35rem; }
+.ri-list li:last-child { margin-bottom: 0; }
+.ri-list li::marker { color: var(--teal); }
 .kw-title {
   font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
   color: var(--ink); margin-bottom: 0.9rem;
