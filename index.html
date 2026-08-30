@@ -9,27 +9,27 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #eef0f5;
-      --bg-subtle: #e4e7ee;
+      --bg: #eef2f0;
+      --bg-subtle: #e4eae7;
       --card: #ffffff;
       --ink: #1e1e2e;
       --ink-2: #4a4a5e;
       --ink-3: #8b8ba0;
       --border: #d8dae5;
 
-      /* colorful accents */
-      --blue: #3b5bdb;
-      --blue-light: #e7ecfb;
-      --purple: #7c3aed;
-      --purple-light: #f0ebff;
-      --teal: #0d9488;
-      --teal-light: #e6f7f5;
-      --orange: #e8590c;
-      --orange-light: #fff2e8;
-      --rose: #e63975;
-      --rose-light: #fce8ef;
-      --green: #16a34a;
-      --green-light: #e8f8ee;
+      /* accents — teal & green family */
+      --blue: #0d9488;
+      --blue-light: #dff3f0;
+      --purple: #0f766e;
+      --purple-light: #d8efe9;
+      --teal: #14b8a6;
+      --teal-light: #e0f7f2;
+      --orange: #16a34a;
+      --orange-light: #e6f6ec;
+      --rose: #0ea5a5;
+      --rose-light: #e0f5f4;
+      --green: #65a30d;
+      --green-light: #eef6df;
 
       --shadow-sm: 0 1px 3px rgba(30,30,46,0.04), 0 1px 2px rgba(30,30,46,0.06);
       --shadow-md: 0 4px 14px rgba(30,30,46,0.07);
@@ -281,61 +281,36 @@
     }
     .pub-badge:hover { background: var(--blue); color: #fff; }
 
+    .pub-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.55rem; }
+    .pub-tag {
+      font-size: 0.74rem; font-family: var(--font-mono); font-weight: 500;
+      color: var(--teal); cursor: default;
+    }
+    .pub-tag::before { content: '#'; opacity: 0.6; }
+    .pub-tag:hover { color: var(--purple); }
+
+    .pub-abstract { margin-top: 0.55rem; }
+    .pub-abstract summary {
+      font-size: 0.76rem; font-family: var(--font-mono); font-weight: 500;
+      color: var(--ink-3); cursor: pointer; list-style: none;
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      user-select: none; transition: color 0.2s;
+    }
+    .pub-abstract summary::-webkit-details-marker { display: none; }
+    .pub-abstract summary::before { content: '▸'; font-size: 0.7rem; transition: transform 0.2s; }
+    .pub-abstract[open] summary::before { transform: rotate(90deg); }
+    .pub-abstract summary:hover { color: var(--teal); }
+    .pub-abstract p {
+      font-size: 0.83rem; color: var(--ink-2); line-height: 1.65;
+      margin-top: 0.5rem; padding: 0.7rem 0.9rem;
+      background: var(--bg); border-radius: 8px;
+      border-left: 3px solid var(--teal);
+    }
+
     @media (max-width: 640px) {
       .pub-entry { grid-template-columns: 1fr; gap: 0.8rem; }
       .pub-thumb { height: 150px; }
     }
-
-    /* ═══════ PROJECTS ═══════ */
-    .proj-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
-    }
-
-    .proj-card {
-      background: var(--card); border-radius: var(--radius);
-      box-shadow: var(--shadow-sm); overflow: hidden;
-      transition: all 0.3s ease;
-      border: 1px solid transparent;
-    }
-    .proj-card:hover {
-      box-shadow: var(--shadow-lg); transform: translateY(-4px);
-      border-color: var(--border);
-    }
-
-    .proj-banner { height: 6px; }
-    .proj-card:nth-child(1) .proj-banner { background: linear-gradient(90deg, var(--blue), var(--purple)); }
-    .proj-card:nth-child(2) .proj-banner { background: linear-gradient(90deg, var(--teal), var(--green)); }
-    .proj-card:nth-child(3) .proj-banner { background: linear-gradient(90deg, var(--orange), var(--rose)); }
-    .proj-card:nth-child(4) .proj-banner { background: linear-gradient(90deg, var(--purple), var(--rose)); }
-
-    .proj-body { padding: 1.3rem 1.4rem 1.4rem; }
-
-    .proj-body .proj-icon {
-      width: 38px; height: 38px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; margin-bottom: 0.7rem;
-    }
-    .proj-card:nth-child(1) .proj-icon { background: var(--blue-light); }
-    .proj-card:nth-child(2) .proj-icon { background: var(--teal-light); }
-    .proj-card:nth-child(3) .proj-icon { background: var(--orange-light); }
-    .proj-card:nth-child(4) .proj-icon { background: var(--purple-light); }
-
-    .proj-body h3 {
-      font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.35rem;
-    }
-    .proj-body h3 a { color: var(--ink); }
-    .proj-body h3 a:hover { color: var(--blue); }
-
-    .proj-body p { font-size: 0.85rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 0.9rem; }
-
-    .proj-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; }
-    .proj-tags span {
-      font-size: 0.68rem; font-family: var(--font-mono); font-weight: 500;
-      padding: 0.18rem 0.5rem; border-radius: 5px;
-      background: var(--bg); color: var(--ink-3);
-    }
-
-    @media (max-width: 640px) { .proj-grid { grid-template-columns: 1fr; } }
 
     /* ═══════ EXPERIENCE ═══════ */
     .exp-card {
@@ -344,24 +319,41 @@
     }
 
     .exp-item {
-      display: grid; grid-template-columns: 1fr auto; gap: 1rem;
-      align-items: baseline; padding: 0.85rem 1.5rem;
+      display: grid; grid-template-columns: 44px 1fr auto; gap: 1rem;
+      align-items: start; padding: 1.1rem 1.5rem;
       transition: background 0.15s;
     }
     .exp-item:hover { background: var(--bg); }
     .exp-item + .exp-item { border-top: 1px solid var(--bg-subtle); }
 
-    .exp-name { font-family: var(--font-serif); font-size: 1.02rem; font-weight: 600; }
-    .exp-detail { font-size: 0.83rem; color: var(--ink-2); }
-
-    .exp-time {
-      font-family: var(--font-mono); font-size: 0.75rem;
-      color: var(--ink-3); white-space: nowrap;
-      background: var(--bg); padding: 0.2rem 0.6rem; border-radius: 6px;
+    .exp-logo {
+      width: 44px; height: 44px; border-radius: 10px; object-fit: contain;
+      background: var(--teal-light); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
+      color: var(--purple);
     }
 
-    @media (max-width: 500px) {
-      .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
+    .exp-main { min-width: 0; }
+    .exp-org-name {
+      font-family: var(--font-serif); font-size: 1.08rem; font-weight: 700; color: var(--ink);
+      line-height: 1.25;
+    }
+    .exp-role {
+      font-size: 0.85rem; font-style: italic; font-weight: 600;
+      color: var(--teal); margin-top: 1px;
+    }
+    .exp-note { font-size: 0.83rem; color: var(--ink-2); margin-top: 0.35rem; line-height: 1.55; }
+    .exp-note::before { content: '✦'; color: var(--teal); margin-right: 0.4rem; }
+
+    .exp-when { text-align: right; white-space: nowrap; padding-top: 2px; }
+    .exp-date { font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-3); }
+    .exp-loc { font-size: 0.74rem; color: var(--ink-3); margin-top: 3px; }
+
+    @media (max-width: 600px) {
+      .exp-item { grid-template-columns: 40px 1fr; gap: 0.8rem; }
+      .exp-when { grid-column: 2 / 3; text-align: left; margin-top: 0.4rem; padding-top: 0; }
+      .exp-loc { margin-top: 1px; }
     }
 
     /* ── FOOTER ── */
@@ -386,6 +378,51 @@
     }
     .hero-card { animation: rise 0.6s ease both; }
     .sec { animation: rise 0.5s ease both; }
+
+    /* ── RESEARCH KEYWORDS (plain bulleted list) ── */
+    .kw-list-plain { margin: 0; padding-left: 1.3rem; }
+    .kw-list-plain li {
+      font-size: 0.9rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 0.4rem;
+    }
+    .kw-list-plain li::marker { color: var(--teal); }
+    .kw-list-plain strong { color: var(--ink); font-weight: 700; }
+
+    /* ── RESEARCH SECTION ── */
+    .research-card {
+      background: var(--card); border-radius: var(--radius);
+      box-shadow: var(--shadow-sm); padding: 1.5rem 1.75rem;
+    }
+    .research-text {
+      font-size: 0.92rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 1.4rem;
+    }
+    .research-text strong { color: var(--ink); font-weight: 700; }
+    .kw-title {
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      .research-card { padding: 1.3rem 1.3rem; }
+    }
+
+    /* ── SEEKING / CALLOUT ── */
+    .seeking {
+      display: flex; align-items: flex-start; gap: 0.6rem;
+      background: var(--teal-light);
+      border: 1px solid var(--teal); border-left: 4px solid var(--teal);
+      border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1.3rem;
+      font-size: 0.86rem; color: var(--ink-2); line-height: 1.6;
+    }
+    .seeking svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--teal); margin-top: 3px; }
+    .seeking strong { color: var(--purple); font-weight: 700; }
+    .seeking a { color: var(--purple); text-decoration: underline; text-underline-offset: 2px; }
+
+    .name-zh {
+      font-size: 0.55em;
+      font-weight: 500;
+      color: var(--ink-3);
+      margin-left: 0.3rem;
+      letter-spacing: 0.02em;
+    }
   </style>
 </head>
 <body>
@@ -398,8 +435,8 @@
       </button>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
       </ul>
     </div>
@@ -419,16 +456,19 @@
           </div> -->
         </div>
         <div class="hero-info">
-          <h1>Yuheng Li</h1>
+          <h1>Yuheng Li <span class="name-zh">李雨恒</span></h1>
           <p class="affil">Ph.D. Candidate · <a href="#">Department of Data Science</a> · <a href="#">William & Mary</a></p>
           <p class="bio">
             I am a Ph.D. candidate advised by <a href="https://yanhai-xiong.github.io/">Yanhai Xiong</a> and <a href="https://haipeng-chen.github.io/">Haipeng Chen</a>.
-            My research lies at the intersection of
-            <strong>Reinforcement Learning</strong>, Diffusion Model, and
-            <strong>Vision Language Model</strong>, with a focus on building
-            language models that are more <strong>reliable</strong>,
-            <strong>interpretable</strong>, and <strong>aligned with human intent</strong>.
+            My research centers on <strong>AI for Optimization</strong> — building autonomous,
+            generalizable, and interpretable solvers for complex optimization and decision-making
+            problems, and exploring how <strong>LLMs</strong> and <strong>Agentic AI</strong> can
+            power the next generation of solvers.
           </p>
+          <div class="seeking">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <div>I'm actively looking for self-motivated <strong>interns &amp; collaborators</strong> interested in AI for optimization, neural combinatorial optimization, and LLM/agent-based solvers. If that sounds like you, feel free to reach out via <a href="mailto:yli95@wm.edu">email</a>.</div>
+          </div>
           <div class="pills">
             <a class="pill" href="mailto:yli95@wm.edu">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>Email
@@ -449,6 +489,30 @@
         </div>
       </div>
     </div>
+
+    <!-- ═══ RESEARCH ═══ -->
+    <section class="sec" id="research">
+      <div class="sec-head">
+        <span class="sec-dot" style="background: var(--teal);"></span>
+        <h2>Research</h2>
+        <span class="sec-line"></span>
+      </div>
+      <div class="research-card">
+        <p class="research-text">
+          My research focuses on <strong>AI for Optimization</strong>, specifically developing
+          autonomous solutions for complex optimization problems and decision-making challenges,
+          including feasibility handling, generalization and interpretability. Recently, I am
+          exploring the integration of LLMs and Agentic AI to build next-generation solvers for
+          compelling application domains, such as routing, manufacturing, and robotics.
+        </p>
+        <div class="kw-title">Research Keywords</div>
+        <ul class="kw-list-plain">
+          <li><strong>Machine Learning:</strong> Deep Reinforcement Learning, Deep Learning, LLM, Agentic AI, Foundation Model, Interpretability</li>
+          <li><strong>Optimization:</strong> Neural Combinatorial Optimization (NCO), Learning-guided Optimization (LGO), GPU-Accelerated Optimization</li>
+          <li><strong>Application:</strong> Routing, Scheduling, Manufacturing, Robotics</li>
+        </ul>
+      </div>
+    </section>
 
     <!-- ═══ NEWS ═══ -->
     <section class="sec" id="news">
@@ -489,130 +553,62 @@
 
         <div class="pub-entry">
           <div class="pub-thumb">
-            <!-- 替换: <img src="images/paper1.png" alt="Paper teaser" /> -->
+            <!-- 替换: <img src="images/canrl.png" alt="Paper teaser" /> -->
             <div class="thumb-ph">
               <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg>
               Paper Teaser
             </div>
           </div>
           <div class="pub-info">
-            <div class="pub-title-text"><a href="#">Your Paper Title: A Long and Descriptive Academic Title About Something Interesting</a></div>
-            <div class="pub-authors"><span class="me">Yuheng Li</span>, Coauthor One, Coauthor Two, Advisor Name</div>
-            <div class="pub-venue">ACL 2026 <span class="award">🏆 Best Paper</span></div>
+            <div class="pub-title-text"><a href="#">Can Reinforcement Learning Solve Asymmetric Combinatorial-Continuous Zero-Sum Games?</a></div>
+            <div class="pub-authors"><span class="me">Yuheng Li</span>, Panpan Wang, Haipeng Chen</div>
+            <div class="pub-venue">ICLR 2025 (Poster)</div>
             <div class="pub-badges">
               <a class="pub-badge" href="#">paper</a>
-              <a class="pub-badge" href="#">arxiv</a>
+              <a class="pub-badge" href="#">openreview</a>
               <a class="pub-badge" href="#">code</a>
-              <a class="pub-badge" href="#">demo</a>
-              <a class="pub-badge" href="#">bibtex</a>
             </div>
+            <div class="pub-tags">
+              <span class="pub-tag">RL</span>
+              <span class="pub-tag">Optimization</span>
+              <span class="pub-tag">GameTheory</span>
+            </div>
+            <details class="pub-abstract">
+              <summary>Abstract</summary>
+              <p>We define and study ACCES — asymmetric combinatorial–continuous zero-sum games — and prove the existence of a mixed Nash equilibrium by approximating with finite games. We propose two algorithms, CCDO and CCDORL, with convergence and computational analysis, and show over 5% average robustness gains across three ACCES instances. (Replace with the official abstract if you prefer.)</p>
+            </details>
           </div>
         </div>
 
         <div class="pub-entry">
           <div class="pub-thumb">
+            <!-- 替换: <img src="images/lens.png" alt="Paper teaser" /> -->
             <div class="thumb-ph">
               <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg>
               Paper Teaser
             </div>
           </div>
           <div class="pub-info">
-            <div class="pub-title-text"><a href="#">Another Paper With an Interesting Research Question on Language Models</a></div>
-            <div class="pub-authors">Coauthor One, <span class="me">Yuheng Li</span>, Advisor Name</div>
-            <div class="pub-venue">EMNLP 2026 (Findings)</div>
+            <div class="pub-title-text"><a href="#">LENS: Learning to Navigate with Active Search for Partially Observable MAPF in Unknown Environments</a></div>
+            <div class="pub-authors">Di Yang, <span class="me">Yuheng Li</span>, Yanhai Xiong</div>
+            <div class="pub-venue">Transactions on Machine Learning Research (TMLR)</div>
             <div class="pub-badges">
               <a class="pub-badge" href="#">paper</a>
-              <a class="pub-badge" href="#">arxiv</a>
+              <a class="pub-badge" href="#">openreview</a>
               <a class="pub-badge" href="#">code</a>
             </div>
+            <div class="pub-tags">
+              <span class="pub-tag">RL</span>
+              <span class="pub-tag">MAPF</span>
+              <span class="pub-tag">MultiAgent</span>
+            </div>
+            <details class="pub-abstract">
+              <summary>Abstract</summary>
+              <p>Add the abstract here.</p>
+            </details>
           </div>
         </div>
 
-        <div class="pub-entry">
-          <div class="pub-thumb">
-            <div class="thumb-ph">
-              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg>
-              Paper Teaser
-            </div>
-          </div>
-          <div class="pub-info">
-            <div class="pub-title-text"><a href="#">Earlier Work on Foundation Models for Domain-Specific Tasks</a></div>
-            <div class="pub-authors"><span class="me">Yuheng Li</span>, Coauthor Three, Advisor Name</div>
-            <div class="pub-venue">NeurIPS 2025</div>
-            <div class="pub-badges">
-              <a class="pub-badge" href="#">paper</a>
-              <a class="pub-badge" href="#">arxiv</a>
-              <a class="pub-badge" href="#">code</a>
-              <a class="pub-badge" href="#">poster</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-entry">
-          <div class="pub-thumb">
-            <div class="thumb-ph">
-              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg>
-              Paper Teaser
-            </div>
-          </div>
-          <div class="pub-info">
-            <div class="pub-title-text"><a href="#">A Comprehensive Survey on Methods in Your Subfield</a></div>
-            <div class="pub-authors"><span class="me">Yuheng Li</span>, Coauthor One</div>
-            <div class="pub-venue">ICML 2025 Workshop</div>
-            <div class="pub-badges">
-              <a class="pub-badge" href="#">paper</a>
-              <a class="pub-badge" href="#">slides</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══ PROJECTS ═══ -->
-    <section class="sec" id="projects">
-      <div class="sec-head">
-        <span class="sec-dot" style="background: var(--purple);"></span>
-        <h2>Projects</h2>
-        <span class="sec-line"></span>
-      </div>
-      <div class="proj-grid">
-        <div class="proj-card">
-          <div class="proj-banner"></div>
-          <div class="proj-body">
-            <div class="proj-icon">🧠</div>
-            <h3><a href="#">Project Alpha</a></h3>
-            <p>Exploring new methods for improving factuality in LLMs through retrieval-augmented generation.</p>
-            <div class="proj-tags"><span>PyTorch</span> <span>Transformers</span> <span>RAG</span></div>
-          </div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-banner"></div>
-          <div class="proj-body">
-            <div class="proj-icon">📊</div>
-            <h3><a href="#">Eval Toolkit</a></h3>
-            <p>Open-source framework benchmarking language models across 50+ diverse tasks. 500+ GitHub stars.</p>
-            <div class="proj-tags"><span>Python</span> <span>Open Source</span> <span>Eval</span></div>
-          </div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-banner"></div>
-          <div class="proj-body">
-            <div class="proj-icon">🤖</div>
-            <h3><a href="#">Interactive Demo</a></h3>
-            <p>Web demo for real-time model inference with attention visualization and parameter tuning.</p>
-            <div class="proj-tags"><span>React</span> <span>FastAPI</span> <span>WebGL</span></div>
-          </div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-banner"></div>
-          <div class="proj-body">
-            <div class="proj-icon">📝</div>
-            <h3><a href="#">Dataset &amp; Benchmark</a></h3>
-            <p>Large-scale benchmark for evaluating model robustness across linguistic phenomena, 100K+ examples.</p>
-            <div class="proj-tags"><span>Dataset</span> <span>Benchmark</span> <span>NLP</span></div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -625,32 +621,50 @@
       </div>
       <div class="exp-card">
         <div class="exp-item">
-          <div>
-            <div class="exp-name">Research Intern — Research Lab</div>
-            <div class="exp-detail">Alignment and RLHF for large language models</div>
+          <div class="exp-logo">R</div>
+          <div class="exp-main">
+            <div class="exp-org-name">Company / Lab</div>
+            <div class="exp-role">Research Intern</div>
+            <div class="exp-note">Alignment and RLHF for large language models.</div>
           </div>
-          <div class="exp-time">Jan – May 2026</div>
+          <div class="exp-when">
+            <div class="exp-date">Jan – May 2026</div>
+            <div class="exp-loc">City, Country</div>
+          </div>
         </div>
         <div class="exp-item">
-          <div>
-            <div class="exp-name">CS 682 — Advanced NLP</div>
-            <div class="exp-detail">Graduate Teaching Assistant</div>
+          <div class="exp-logo">W</div>
+          <div class="exp-main">
+            <div class="exp-org-name">William &amp; Mary</div>
+            <div class="exp-role">Graduate Teaching Assistant · CS 682 Advanced NLP</div>
           </div>
-          <div class="exp-time">Spring 2025</div>
+          <div class="exp-when">
+            <div class="exp-date">Spring 2025</div>
+            <div class="exp-loc">Williamsburg, VA</div>
+          </div>
         </div>
         <div class="exp-item">
-          <div>
-            <div class="exp-name">CS 440 — Machine Learning</div>
-            <div class="exp-detail">Teaching Assistant</div>
+          <div class="exp-logo">W</div>
+          <div class="exp-main">
+            <div class="exp-org-name">William &amp; Mary</div>
+            <div class="exp-role">Teaching Assistant · CS 440 Machine Learning</div>
           </div>
-          <div class="exp-time">Fall 2024</div>
+          <div class="exp-when">
+            <div class="exp-date">Fall 2024</div>
+            <div class="exp-loc">Williamsburg, VA</div>
+          </div>
         </div>
         <div class="exp-item">
-          <div>
-            <div class="exp-name">SWE Intern — Tech Company</div>
-            <div class="exp-detail">NLP team, text classification pipeline</div>
+          <div class="exp-logo">T</div>
+          <div class="exp-main">
+            <div class="exp-org-name">Tech Company</div>
+            <div class="exp-role">SWE Intern</div>
+            <div class="exp-note">NLP team, text classification pipeline.</div>
           </div>
-          <div class="exp-time">Summer 2023</div>
+          <div class="exp-when">
+            <div class="exp-date">Summer 2023</div>
+            <div class="exp-loc">City, Country</div>
+          </div>
         </div>
       </div>
     </section>
