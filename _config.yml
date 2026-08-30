@@ -1,1 +1,10 @@
 # Minimal config so GitHub Pages builds with Jekyll.
+# This site uses only include tags to stitch sections together —
+# no theme, no plugins.
+theme: null
+
+# Don't let Jekyll render these docs as pages. They contain
+# example include-tags that would otherwise break the build.
+exclude:
+  - EDITING-GUIDE.md
+  - README.md
