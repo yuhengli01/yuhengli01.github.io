@@ -9,58 +9,48 @@
 
         <div class="pub-entry">
           <div class="pub-thumb">
-            <!-- 替换: <img src="images/canrl.png" alt="Paper teaser" /> -->
-            <div class="thumb-ph">
-              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg>
-              Paper Teaser
-            </div>
+            <img src="images/canrl.png" alt="CCDO-RL / ACCES games poster teaser" />
           </div>
           <div class="pub-info">
-            <div class="pub-title-text"><a href="#">Can Reinforcement Learning Solve Asymmetric Combinatorial-Continuous Zero-Sum Games?</a></div>
+            <div class="pub-title-text"><a href="https://arxiv.org/abs/2502.01252">Can Reinforcement Learning Solve Asymmetric Combinatorial-Continuous Zero-Sum Games?</a></div>
             <div class="pub-authors"><span class="me">Yuheng Li</span>, Panpan Wang, Haipeng Chen</div>
             <div class="pub-venue">ICLR 2025 (Poster)</div>
             <div class="pub-badges">
-              <a class="pub-badge" href="#">paper</a>
-              <a class="pub-badge" href="#">openreview</a>
-              <a class="pub-badge" href="#">code</a>
+              <a class="pub-badge" href="https://arxiv.org/abs/2502.01252">arxiv</a>
+              <a class="pub-badge" href="https://github.com/wmd3i/CCDO-RL">code</a>
+              <a class="pub-badge" href="images/canrl.png">poster</a>
+              <a class="pub-badge" href="images/CCDORL-Slides.pdf">slides</a>
             </div>
             <div class="pub-tags">
-              <span class="pub-tag">RL</span>
-              <span class="pub-tag">Optimization</span>
-              <span class="pub-tag">GameTheory</span>
+              <span class="pub-tag">Multi-Agent Reinforcement Learning</span>
+              <span class="pub-tag">Game Theory</span>
             </div>
             <details class="pub-abstract">
               <summary>Abstract</summary>
-              <p>We define and study ACCES — asymmetric combinatorial–continuous zero-sum games — and prove the existence of a mixed Nash equilibrium by approximating with finite games. We propose two algorithms, CCDO and CCDORL, with convergence and computational analysis, and show over 5% average robustness gains across three ACCES instances. (Replace with the official abstract if you prefer.)</p>
+              <p>Existing work on learning in zero-sum games largely assumes symmetric or matrix-form strategy spaces. We define and study ACCES games — two-player zero-sum games in which one player chooses from a combinatorial action space and the other from an infinite, continuous one — a structure that arises naturally in combinatorial optimization under adversarial or uncertain parameters (e.g., routing, covering, and patrolling). We prove a mixed Nash equilibrium exists via essentially-finite-game approximation, then propose CCDO, a combinatorial–continuous double-oracle solver with convergence guarantees, and its practical variant CCDO-RL, which uses reinforcement learning to compute approximate best responses. On adversarial covering-salesman, capacitated-routing, and patrolling games, CCDO-RL converges to approximate equilibria and generalizes to unseen instances.</p>
             </details>
           </div>
         </div>
 
         <div class="pub-entry">
           <div class="pub-thumb">
-            <!-- 替换: <img src="images/lens.png" alt="Paper teaser" /> -->
-            <div class="thumb-ph">
-              <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg>
-              Paper Teaser
-            </div>
+            <img src="images/lens.png" alt="LENS pipeline teaser" />
           </div>
           <div class="pub-info">
-            <div class="pub-title-text"><a href="#">LENS: Learning to Navigate with Active Search for Partially Observable MAPF in Unknown Environments</a></div>
+            <div class="pub-title-text"><a href="https://openreview.net/forum?id=DuNU6ZN5GG">LENS: Learning to Navigate with Active Search for Partially Observable MAPF in Unknown Environments</a></div>
             <div class="pub-authors">Di Yang, <span class="me">Yuheng Li</span>, Yanhai Xiong</div>
             <div class="pub-venue">Transactions on Machine Learning Research (TMLR)</div>
             <div class="pub-badges">
-              <a class="pub-badge" href="#">paper</a>
-              <a class="pub-badge" href="#">openreview</a>
-              <a class="pub-badge" href="#">code</a>
+              <a class="pub-badge" href="https://openreview.net/pdf?id=DuNU6ZN5GG">paper</a>
+              <a class="pub-badge" href="https://openreview.net/forum?id=DuNU6ZN5GG">openreview</a>
             </div>
             <div class="pub-tags">
-              <span class="pub-tag">RL</span>
-              <span class="pub-tag">MAPF</span>
-              <span class="pub-tag">MultiAgent</span>
+              <span class="pub-tag">Diffusion Model</span>
+              <span class="pub-tag">Multi-Agent Path Finding</span>
             </div>
             <details class="pub-abstract">
               <summary>Abstract</summary>
-              <p>Add the abstract here.</p>
+              <p>LENS tackles centralized, partially observable multi-agent path finding (PO-MAPF), where a team must navigate and coordinate in an environment it discovers as it moves. Rather than one-step reactive policies or global-search-with-local-repair, LENS runs search locally over anticipated conflict groups and learns to regress a continuous potential field — a dense prediction (a U-Net proposer with FiLM guidance) that captures longer-horizon structure and helps agents recognize and pass through bottlenecks. A conflict-resolution cascade (L-CBS, coordinated retreat, push-and-rotate) then guarantees locally collision-free motion within bounded spatio-temporal windows, without large-scale end-to-end policy learning.</p>
             </details>
           </div>
         </div>
