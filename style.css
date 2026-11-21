@@ -142,9 +142,16 @@ nav {
 .hero-info .affil a { color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; }
 .hero-info .affil a:hover { color: var(--blue); text-decoration-color: var(--blue); }
 
+.hero-info .keywords {
+  font-size: 0.86rem; font-weight: 600; color: var(--teal);
+  margin: -0.55rem 0 1rem; line-height: 1.5;
+}
+.hero-info .keywords span { white-space: nowrap; }
+
 .hero-info .bio {
   font-size: 0.92rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 1.4rem;
 }
+.hero-info .bio + .bio { margin-top: -0.6rem; }
 .hero-info .bio strong { color: var(--ink); font-weight: 600; }
 
 .pills { display: flex; gap: 0.45rem; flex-wrap: wrap; }
@@ -415,6 +422,14 @@ footer {
 .ri-list li { font-size: 0.88rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 0.35rem; }
 .ri-list li:last-child { margin-bottom: 0; }
 .ri-list li::marker { color: var(--teal); }
+.ri-title-q { margin-top: 1.1rem; }
+.ri-questions { list-style: none; margin: 0; padding: 0; }
+.ri-questions li {
+  position: relative; padding-left: 1.2rem; margin-bottom: 0.35rem;
+  font-size: 0.88rem; line-height: 1.6; font-style: italic; color: var(--ink);
+}
+.ri-questions li:last-child { margin-bottom: 0; }
+.ri-questions li::before { content: '→'; position: absolute; left: 0; font-style: normal; color: var(--teal); }
 .kw-title {
   font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
   color: var(--ink); margin-bottom: 0.9rem;
