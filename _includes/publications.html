@@ -9,6 +9,63 @@
 
         <div class="pub-entry">
           <div class="pub-thumb">
+            <img src="images/hyco.png" alt="HyCO inference framework" />
+          </div>
+          <div class="pub-info">
+            <div class="pub-title-text"><a href="https://arxiv.org/abs/2609.07990">HyCO: A Hybrid Neural Solver for Combinatorial Optimization</a></div>
+            <div class="pub-authors"><span class="me">Yuheng Li</span><sup>*</sup>, Di Yang<sup>*</sup>, Haipeng Chen<sup>†</sup>, Yanhai Xiong<sup>†</sup> <span class="equal-note">(* equal contribution)</span></div>
+            <div class="pub-venue">NeurIPS 2026 (Poster)</div>
+            <div class="pub-badges">
+              <a class="pub-badge" href="https://arxiv.org/abs/2609.07990">arxiv</a>
+              <a class="pub-badge" href="https://github.com/wmd3i/HyCO">code</a>
+            </div>
+            <div class="pub-tags">
+              <span class="pub-tag">Reinforcement Learning</span>
+              <span class="pub-tag">Diffusion Model</span>
+              <span class="pub-tag">Combinatorial Optimization</span>
+            </div>
+            <details class="pub-abstract">
+              <summary>Key Points</summary>
+              <ul class="pub-points">
+                <li><span class="kp-label">Problem</span> RL solvers accumulate <em>compounding errors</em> over long horizons, while diffusion solvers pay regret that grows with the unsolved subspace: complementary failure modes.</li>
+                <li><span class="kp-label">Method</span> Build a solution prefix with <strong>RL</strong>, then <strong>adaptively hand off</strong> to a conditional <strong>diffusion model</strong> to finish; the trigger uses policy entropy + RL–DM disagreement.</li>
+                <li><span class="kp-label">Theory</span> The hybrid has <strong>strictly lower expected regret</strong> than either backbone, with a <strong>unique optimal trigger step</strong>.</li>
+                <li><span class="kp-label">Results</span> Consistent gains over both RL and DM backbones across diverse CO benchmarks.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="pub-entry">
+          <div class="pub-thumb">
+            <img src="images/vtv-fm.png" alt="VTV-FM terminal-velocity closure" />
+          </div>
+          <div class="pub-info">
+            <div class="pub-title-text"><a href="https://arxiv.org/abs/2610.00785">VTV-FM: Flow Matching through Variational Terminal-Velocity Closure</a></div>
+            <div class="pub-authors">Haoyang Jiang<sup>*</sup>, <span class="me">Yuheng Li</span><sup>*</sup>, Di Yang<sup>*</sup>, Yanhai Xiong, Haipeng Chen<sup>†</sup>, Yi He<sup>†</sup> <span class="equal-note">(* equal contribution)</span></div>
+            <div class="pub-venue">NeurIPS 2026 (Poster)</div>
+            <div class="pub-badges">
+              <a class="pub-badge" href="https://arxiv.org/abs/2610.00785">arxiv</a>
+              <a class="pub-badge" href="https://github.com/HaoyangJiang-WM/VTV-FM">code</a>
+            </div>
+            <div class="pub-tags">
+              <span class="pub-tag">Flow Matching</span>
+              <span class="pub-tag">Generative Model</span>
+            </div>
+            <details class="pub-abstract">
+              <summary>Key Points</summary>
+              <ul class="pub-points">
+                <li><span class="kp-label">Problem</span> Flow matching uses <em>first-order, straight-line</em> bridges, so even OT pairing can't model curvature or acceleration; second-order bridges need a terminal velocity that static data lacks.</li>
+                <li><span class="kp-label">Method</span> Derive the missing terminal velocity by <strong>minimizing acceleration energy</strong>, giving a <strong>closed-form closure</strong> for static data.</li>
+                <li><span class="kp-label">Unified design</span> The same minimum-acceleration principle also defines the <strong>OT pairing cost</strong> and the acceleration training targets.</li>
+                <li><span class="kp-label">Results</span> Better transport geometry and generation quality than first- and high-order FM baselines on 2D data, PDE physical fields, and CIFAR-10.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="pub-entry">
+          <div class="pub-thumb">
             <img src="images/canrl.png" alt="CCDO-RL / ACCES games poster teaser" />
           </div>
           <div class="pub-info">
@@ -26,8 +83,13 @@
               <span class="pub-tag">Game Theory</span>
             </div>
             <details class="pub-abstract">
-              <summary>Abstract</summary>
-              <p>Existing work on learning in zero-sum games largely assumes symmetric or matrix-form strategy spaces. We define and study ACCES games — two-player zero-sum games in which one player chooses from a combinatorial action space and the other from an infinite, continuous one — a structure that arises naturally in combinatorial optimization under adversarial or uncertain parameters (e.g., routing, covering, and patrolling). We prove a mixed Nash equilibrium exists via essentially-finite-game approximation, then propose CCDO, a combinatorial–continuous double-oracle solver with convergence guarantees, and its practical variant CCDO-RL, which uses reinforcement learning to compute approximate best responses. On adversarial covering-salesman, capacitated-routing, and patrolling games, CCDO-RL converges to approximate equilibria and generalizes to unseen instances.</p>
+              <summary>Key Points</summary>
+              <ul class="pub-points">
+                <li><span class="kp-label">New model</span> <strong>First to define ACCES games</strong>: two-player zero-sum games where one player has a <em>combinatorial</em> strategy space and the other an <em>infinite, continuous</em> one, a structure that arises in combinatorial optimization under adversarial or uncertain parameters (routing, patrolling, security games).</li>
+                <li><span class="kp-label">Theory</span> Prove a <strong>mixed Nash equilibrium exists</strong> via finite-game approximation, establishing the weak sequential compactness and continuity it requires.</li>
+                <li><span class="kp-label">Method</span> <strong>CCDO</strong>, a combinatorial–continuous double-oracle solver with convergence guarantees; <strong>CCDO-RL</strong> uses RL to compute approximate best responses for the NP-hard combinatorial player, with a new convergence analysis.</li>
+                <li><span class="kp-label">Results</span> Converges to NE on adversarial covering salesman, capacitated VRP, and patrolling games; beats baselines across adversary types and problem sizes, especially in <strong>generalization</strong>.</li>
+              </ul>
             </details>
           </div>
         </div>
@@ -49,8 +111,12 @@
               <span class="pub-tag">Multi-Agent Path Finding</span>
             </div>
             <details class="pub-abstract">
-              <summary>Abstract</summary>
-              <p>LENS tackles centralized, partially observable multi-agent path finding (PO-MAPF), where a team must navigate and coordinate in an environment it discovers as it moves. Rather than one-step reactive policies or global-search-with-local-repair, LENS runs search locally over anticipated conflict groups and learns to regress a continuous potential field — a dense prediction (a U-Net proposer with FiLM guidance) that captures longer-horizon structure and helps agents recognize and pass through bottlenecks. A conflict-resolution cascade (L-CBS, coordinated retreat, push-and-rotate) then guarantees locally collision-free motion within bounded spatio-temporal windows, without large-scale end-to-end policy learning.</p>
+              <summary>Key Points</summary>
+              <ul class="pub-points">
+                <li><span class="kp-label">Problem</span> <strong>Partially observable MAPF</strong>: a team must navigate and coordinate in an environment it discovers as it moves.</li>
+                <li><span class="kp-label">Method</span> Local search over anticipated conflict groups, guided by a learned <strong>continuous potential field</strong> (U-Net + FiLM) that captures long-horizon structure and helps agents pass <strong>bottlenecks</strong>.</li>
+                <li><span class="kp-label">Guarantee</span> A conflict-resolution cascade (L-CBS, coordinated retreat, push-and-rotate) ensures <strong>locally collision-free</strong> motion, with no large-scale end-to-end policy learning.</li>
+              </ul>
             </details>
           </div>
         </div>

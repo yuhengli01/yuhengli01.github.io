@@ -252,6 +252,9 @@ nav {
   background: linear-gradient(to top, var(--blue-light) 45%, transparent 45%);
   padding: 0 2px;
 }
+.pub-authors sup { font-size: 0.7em; line-height: 0; margin-left: 1px; }
+.pub-authors .me + sup { margin-left: -2px; }
+.pub-authors .equal-note { font-size: 0.74rem; color: var(--ink-3); margin-left: 0.3rem; white-space: nowrap; }
 
 .pub-venue { font-size: 0.85rem; font-style: italic; font-weight: 600; color: var(--purple); margin-bottom: 0.5rem; }
 
@@ -291,11 +294,20 @@ nav {
 .pub-abstract summary::before { content: '▸'; font-size: 0.7rem; transition: transform 0.2s; }
 .pub-abstract[open] summary::before { transform: rotate(90deg); }
 .pub-abstract summary:hover { color: var(--teal); }
-.pub-abstract p {
+.pub-abstract p,
+.pub-abstract .pub-points {
   font-size: 0.83rem; color: var(--ink-2); line-height: 1.65;
   margin-top: 0.5rem; padding: 0.7rem 0.9rem;
   background: var(--bg); border-radius: 8px;
   border-left: 3px solid var(--teal);
+}
+.pub-points { list-style: none; }
+.pub-points li + li { margin-top: 0.45rem; }
+.pub-points strong { color: var(--ink); font-weight: 600; }
+.pub-points .kp-label {
+  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--purple); margin-right: 0.35rem;
 }
 
 @media (max-width: 640px) {
