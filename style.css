@@ -415,21 +415,14 @@ footer {
   background: var(--teal-light); border-radius: 8px;
   border-left: 3px solid var(--teal);
 }
-.research-interests strong { color: var(--purple); font-weight: 700; }
+.research-interests strong { color: var(--ink); font-weight: 700; }
 .research-interests em { color: var(--ink); font-style: italic; }
-.ri-title { font-weight: 700; color: var(--purple); margin-bottom: 0.5rem; font-size: 0.92rem; }
+.ri-title { font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; font-size: 0.92rem; }
 .ri-list { margin: 0; padding-left: 1.2rem; }
 .ri-list li { font-size: 0.88rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 0.35rem; }
 .ri-list li:last-child { margin-bottom: 0; }
-.ri-list li::marker { color: var(--teal); }
+.ri-list li::marker { color: var(--ink-3); }
 .ri-title-q { margin-top: 1.1rem; }
-.ri-questions { list-style: none; margin: 0; padding: 0; }
-.ri-questions li {
-  position: relative; padding-left: 1.2rem; margin-bottom: 0.35rem;
-  font-size: 0.88rem; line-height: 1.6; font-style: italic; color: var(--ink);
-}
-.ri-questions li:last-child { margin-bottom: 0; }
-.ri-questions li::before { content: '→'; position: absolute; left: 0; font-style: normal; color: var(--teal); }
 .kw-title {
   font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700;
   color: var(--ink); margin-bottom: 0.9rem;
